@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}WEPL | About Us{% endblock %}
+
+{% block meta %}
+        <meta name="description" content="“Life begins at home”, a heaven where a host of feelings find expression, tenderness, joy, happiness, warmth, care… We inspire and celebrate these human emotions with building homes, designing & creating lifestyle decor and finally furnishing them with Mark Bed & Bath Linen." />
+        <meta name="keywords" content="Winmark Enterprises Private Limited, WEPL, Ajay Vaish, Aakrit Vaish" />
+		<script type="text/javascript" src="{% static 'js/about.min.js' %}"></script>
+			
+{% endblock %}
+
+{% block content %}
+
+		<div class="aboutWEPL">
+			<div class="WEPLintro">
+				<p class="about_wepl">
+				“Life begins at home”, a heaven where a host of feelings find expression, tenderness, joy, happiness, warmth, care…. 
+				<br/>
+				<br/>
+				We inspire and celebrate these human emotions with building homes, designing & creating lifestyle decor and finally 
+				furnishing them with Mark Bed & Bath Linen.			
+				</p>
+			</div>		
+		</div>
+
+		<div id="splitlayout" class="splitlayout ">
+			<div class="intro">	
+				<div class="side side-left">
+					<div class="intro-content intConLef">
+						<div class="profile lef"><img src="{% static 'images/ajay-vaish.jpg' %}" alt="ajay-vaish"></div>
+						<h1 class="lefH1"><span>Ajay Vaish </span><span>Chairman & Managing Director</span></h1>
+					</div>
+					<div class="overlay"></div>
+				</div>
+				<div class="side side-right">
+					<div class="intro-content intConRig">
+						<div class="profile rig"><img src="{% static 'images/aakrit-vaish.jpg' %}" alt="aakrit-vaish"></div>
+						<h1 class="rigH1"><span>Aakrit Vaish </span><span>Director</span></h1>
+					</div>
+					<div class="overlay"></div>
+				</div>
+			</div>
+			<div class="page page-right">
+				<div class="page-inner">
+					<section>
+						<h2>Aakrit Vaish</h2>
+						<p>Aakrit Vaish is a Director at Winmark, looking at overall digital strategy and operations. 
+						After completing his Bachelor's in Industrial Engineering from the University of Illinois Urbana-Champaign in 2008, 
+						Aakrit has been involved with various ventures in the IT sector. 
+						In 2010, he started working at Flurry Inc, a Silicon Valley based mobile advertising company, 
+						one of the world's largest in the space. 
+						In 2011, he moved to India to start Flurry's operations in the region, and grew the team to 10 by 2013. 
+						Along the way, he started investing in Indian IT start ups, 
+						and has made 6 investments in various sectors including advertising, consumer internet, and enterprise software. 
+						In 2013, he started a new venture called Haptik, a mobile app company doing customer support 
+						and now spends most of his time focused on that. 
+						He has been instrumental in the digital activities of Winmark's home business including e-commerce, social media and advertising. </p>
+						</section>					
+				</div>
+			</div>
+			<div class="page page-left">
+				<div class="page-inner">
+					<section>
+						<h2>Ajay Vaish</h2>
+						<p>An Entrepreneur with a zest for innovative ideas, Mr. Ajay Vaish, the Chairman & Managing Director of the Company, 
+						brings with him a rich & varied portfolio of experience of more than three decades, 
+						creativity & marketing being his key strength which has bought all the value to the organization.
+						He has been instrumental in developing a professional team having an operating model that guarantees quality of work, 
+						technical accuracy and timely deliveries where all the three values from the same service provider are rare. 
+						He has also built an attitude of perfectionism in every team member 
+						which helps us in meeting the customer demands of excellence in quality. </p>
+						</section>			
+				</div>
+			</div>
+			<a href="javascript:void(0)" class="back back-right" title="back to intro">&rarr;</a>
+			<a href="javascript:void(0)" class="back back-left" title="back to intro">&larr;</a>
+		</div>
+
+		<script type="text/javascript" src="{% static 'js/aboutdescription.min.js' %}"></script>	
+
+		<script>
+		$(function() {
+		  $('.lef').hover(function() {
+			$('.lefH1').css('color', '#fff');
+		  }, function() {
+			$('.lefH1').css('color', '');
+		  });
+		});
+		$(function() {
+		  $('.rig').hover(function() {
+			$('.rigH1').css('color', '#fff');
+		  }, function() {
+			$('.rigH1').css('color', '');
+		  });
+		});
+		</script>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}WEPL | Corporate{% endblock %}
+
+{% block meta %}
+        <meta name="description" content="Bringing your corporate alive with our Interior Design & PMC | A perfect gift is worth a thousand emotions with our Promotions & Gifting" />
+        <meta name="keywords" content=" Interior design, PMC, promotions, gifting" />	
+
+{% endblock %}
+
+{% block content %}	
+
+		<div class="mainHeadCorp">			
+			<a href="/hospitality/"><h2 class="corpH2_hosp">Hospitality</h2></a>
+			<a href="/promotions-gifting/"><h2 class="corpH2_gift">Promotions & Gifting</h2></a>
+		</div>
+		
+		<div class="container">		
+			<ul id="sg-panel-container">
+				<li data-w="50" data-h="100">
+					<img title="" src="{% static 'images/hospitality.jpg' %}" alt="hospitality" data-rotate-x="50" />							
+					<img title="" src="{% static 'images/promotions-gifting.jpg' %}" alt="promotions-gifting" data-rotate-x="50" data-translate-z="-700" />							
+				</li>
+				<li ></li>
+			</ul>
+		</div>
+
+
+		<div class="effectCorp">			
+			<div id="animated-bg" class="">
+				<span class="triangles tri_one"></span>
+				<span class="triangles tri_two"></span>
+				<span class="triangles tri_three"></span>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="{% static 'js/home_corp.min.js' %}"></script>	
+		
+		<script>
+		$(document).ready( function () {
+		$(".mainHeadCorp").hide();
+		$(".tri_one").attr("id", "triangle-one");
+		$(".tri_two").attr("id", "triangle-two");
+		$(".tri_three").attr("id", "triangle-three");
+		$(".effectCorp").fadeOut(4000);
+		$(".mainHeadCorp").show(3500);
+		});
+		</script>
+
+		<script type="text/javascript">	
+			$(function() {			
+				$( '#sg-panel-container' ).gridgallery();			
+			});
+		</script>
+
+{% endblock %}

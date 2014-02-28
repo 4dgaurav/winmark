@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">		
+		<title>{% block title %}{% endblock %}</title>		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+        <meta name="author" content="Gaurav Singh | 4d.gaurav@gmail.com" />
+		<meta name="robots" content="index, follow" />		
+		<link rel="shortcut icon" href="{% static 'images/Logo_icon.png' %}"> 		
+		<link rel="stylesheet" type="text/css" href="{% static 'css/main.min.css' %}" />		
+		<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>		
+		{% block meta %}{% endblock %}			
+    </head>	
+	
+    <body>	
+       <div class="container landing_page">		
+			<div class="menu-wrapper">
+				<a href="#menu" class="menu-link">	Menu<span class="ico-caret-down right" aria-hidden="true"></span></a>
+				<nav id="menu" role="navigation">
+					<div class="menu">
+						<ul  class="menu">
+							<li>
+								<a href="/">Home</a>
+							</li>
+							<li>
+								<a href="/about-us/">About Us</a>
+							</li>
+							<li  class="has-subnav">
+								<a>Services</a>
+								<ul class="sub-menu">
+									<li>
+										<a href="http://www.mark-home.com/" target="_blank">Retail</a>
+									</li>
+									<li>
+										<a href="/corporate/">Corporate</a>
+									</li>
+									<li>
+										<a href="/interiors-pmc/">Interiors & PMC</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/careers/">Careers</a>
+							</li>
+							<li>
+								<a href="/contact/">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			{% block content %}{% endblock %}				
+        </div>
+						
+		{% block map %}{% endblock %}
+		
+		
+		<div class="footer_main">
+			<p>Winmark Enterprises Private Limited</p>
+		</div>
+		
+		
+		<script>
+		$(document).ready(function() {
+			$('body').addClass('js');
+				  var $menu = $('#menu'),
+					  $menulink = $('.menu-link'),
+					  $menuTrigger = $('.has-subnav > a');
+				
+			$menulink.click(function(e) {
+					e.preventDefault();
+					$menulink.toggleClass('active');
+					$menu.toggleClass('active');
+			});
+
+			var add_toggle_links = function() { 		
+				if ($('.menu-link').is(":visible")){
+					if ($(".toggle-link").length > 0){
+					}
+					else{
+						$('.has-subnav > a').before('<span class="toggle-link"> Open submenu </span>');
+						$('.toggle-link').click(function(e) {		
+							var $this = $(this);
+							$this.toggleClass('active').siblings('ul').toggleClass('active');
+						});	
+					}
+				}
+				else{
+					$('.toggle-link').empty();
+				}
+			 }
+			add_toggle_links();
+			$(window).bind("resize", add_toggle_links);	
+				
+				});
+		</script>
+		
+	</body>
+	
+</html>

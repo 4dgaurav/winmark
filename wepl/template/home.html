@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Winmark Enterprises Private Limited{% endblock %}
+
+{% block meta %}
+        <meta name="description" content="Challenges are ongoing, accepting them is a challenge, we believe in accepting & we commit to perform" />
+        <meta name="keywords" content="bed linen, bath linen, table linen, interior design, interiors, PMC, project management consultancy, hospitality, promotions, gifting, gift, building, construction" />
+{% endblock %}
+
+{% block content %}	
+
+		<div class="homeBoxMain">	
+		
+			<div class="aboveHomeBox">						
+				<a class="about_home" href="/about/">								
+					<div class="h2_about">						
+						<div><p class="hideMe test">Challenges are ongoing, <br/>accepting them is a challenge, <br/>we believe in accepting</p>
+							<p> & </p>
+						</div>								
+					<div class="dataIcon_about" >
+						<img src="{% static "images/wepl-logo.png" %}" alt="wepl-logo" class="deco">
+					</div>
+					</div>
+				</a>						
+			</div>
+			
+			<div class="belowHomeBox">		
+				<section id="set-5">
+					<div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a">
+						<a href="/corporate/" class="hi-icon hi-icon-corp">Corporate</a>
+						<a href="http://www.mark-home.com/" target="_blank" class="hi-icon hi-icon-retail">Retail</a>
+						<a href="/interiors-pmc/" class="hi-icon hi-icon-pmc">Interiors & PMC</a>
+					</div>						
+				</section>				
+			</div>
+		
+		</div>
+
+
+		<div class="container_home">		
+			<ul id="sg-panel-container">
+				<li data-w="100" data-h="0">
+					<img title="Bed Linen" src="{% static 'images/h1.jpg' %}" data-translate-z="250" />
+					<img title="Bed Linen" src="{% static 'images/h1.jpg' %}" data-translate-z="250" />
+					<img title="Bed Linen" src="{% static 'images/h5.jpg' %}" data-translate-z="250" />
+					<img title="Bed Linen" src="{% static 'images/h1.jpg' %}" data-translate-z="250" />
+				</li> 
+				<li data-w="0" data-h="100">
+					<img title="Bed Linen" src="{% static 'images/h1.jpg' %}" data-translate-z="250" />
+					
+					<img title="Interiors" src="{% static 'images/h2.jpg' %}" data-rotate-x="50" data-rotate-y="100" data-translate-z="-700" /> 
+					<img title="Bed Linen" src="{% static 'images/h1.jpg' %}" data-translate-z="250" />
+					<img title="Bed Linen" src="{% static 'images/h1.jpg' %}" data-translate-z="250" />
+				</li>
+				<li data-w="100" data-h="0">
+					<img title="Bed Linen" src="{% static 'images/h1.jpg' %}" data-translate-z="250" />
+					<img title="Bed Linen" src="{% static 'images/h1.jpg' %}" data-translate-z="250" />
+					<img title="PMC" src="{% static 'images/h11.jpg' %}" data-rotate-x="-50" data-translate-z="-500" />
+					<img title="Bed Linen" src="{% static 'images/h1.jpg' %}" data-translate-z="250" />
+				</li> 
+				<li data-w="0" data-h="100">
+					<img title="Bed Linen" src="{% static 'images/h1.jpg' %}" data-translate-z="250" />
+					
+					<img title="Bath Linen" src="{% static 'images/h4.jpg' %}" data-rotate-x="50" data-translate-z="-700" />
+					<img title="Bed Linen" src="{% static 'images/h1.jpg' %}" data-translate-z="250" />
+					<img title="Bed Linen" src="{% static 'images/h1.jpg' %}" data-translate-z="250" />
+				</li>
+				<li data-w="100" data-h="100">
+					<img title="Table Linen" src="{% static 'images/hosp_bg2.jpg' %}" data-rotate-x="100" data-rotate-y="50" data-translate-z="-500" /> 
+				</li>
+			</ul>			
+		</div>
+				
+		<div class="effectCorp">			
+			<div id="animated-bg" class="">
+				<span class="triangles tri_one"></span>
+				<span class="triangles tri_two"></span>
+				<span class="triangles tri_three"></span>
+			</div>
+		</div>
+				
+		<script type="text/javascript" src="{% static 'js/home_corp.min.js' %}"></script>
+					
+		<script>
+		$(document).ready( function () {
+		$(".aboveHomeBox").hide();
+		$(".tri_one").attr("id", "triangle-one");
+		$(".tri_two").attr("id", "triangle-two");
+		$(".tri_three").attr("id", "triangle-three");
+		$(".effectCorp").fadeOut(2000);
+		$(".aboveHomeBox").fadeIn(3000);
+		});
+		</script>
+		
+		<script type="text/javascript">	
+			$(function() {
+			
+				$( '#sg-panel-container' ).gridgallery();
+			
+			});
+		</script>
+		
+		<script>		
+		$(function() {
+		sayHi();
+			function sayHi() {
+			   setTimeout(sayHi,5000);
+			   $(".sg-next").trigger('click');
+			}
+		});		
+		</script>
+	
+{% endblock %}

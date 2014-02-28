@@ -1,0 +1,217 @@
+{% extends "base_modal.html" %}
+
+{% load static %}
+
+{% block title %}WEPL | Contact Us{% endblock %}
+
+{% block content %}			
+
+		<div class="contact_page_modal">
+	
+			<div id="loadingDiv" class="hiddenClass">
+				<p><img src="{% static "images/loader.gif" %}" alt="loader" ><br/><br/>Please wait... while we send your mail.<p>
+			</div>
+
+			<form method="post" action="/modalhosp/send/"  id="contact_wrap_modal">
+			
+				{% csrf_token %}
+				  
+				<div class="startBlock_modal">
+				
+					<div class="floatLeft_modal">
+					
+						<div class="name">
+						  <label class="label">Name  <span class="required">*</span></label>
+						  <br>
+							<span class="span">
+							  <input name= "firstname" id="firstname" class="inputtext"  type="text" maxlength="20" size="12" placeholder="First Name"/>
+							</span>
+							<span class="span">
+							  <input name= "lastname" id="lastname" class="inputtext"  type="text" maxlength="20" size="18" placeholder="Last Name"/>
+							</span> 
+						</div>
+				
+						<div class="email">
+						  <label class="label">Email Address  <span class="required">*</span></label>
+						  <br>
+						  <input name="email" id="email" class="inputtext" type="email" maxlength="30" size="30" /> 
+						</div>
+				
+						<div class="contactNo">
+						  <label class="label">Contact No.  <span class="required">*</span></label>
+						  <br>
+						  <input name="phone" id="contact" class="inputtext" placeholder="( start with 0 )" type="tel" size="30" />
+						</div>
+				
+				
+					</div>	
+					
+					
+					<div class="floatRight_modal">
+
+						<div class="area">
+						  <label class="label">Select</label>
+						  <br>
+						  <select name="area" id="area">
+								<option value="Corporate">Hospitality</option>										
+								<option value="Corporate">Promotions & Gifting</option>
+								<option value="Interior & PMC">Interiors & PMC</option>
+								<option value="Retail">Retail</option>
+								<option value="Interior & PMC">Others</option>
+						  </select> 
+						</div>
+					
+						<div class="subject">
+						  <label class="label">Subject  <span class="required">*</span></label>
+						  <br>
+						  <input name="subject" id="subject" class="inputtext" type="text" maxlength="50" size="30" />
+						</div>
+				
+						<div class="CoverLetter">
+						  <label class="label">Message  <span class="required">*</span></label>
+						  <br>
+						  <textarea name="enquiry" id="user_message" class="inputtextarea" maxlength="255" type="text" rows="6" cols="30"></textarea>
+						</div>						
+									
+						<div class="message" style="display: none;">
+						  <label class="label">Message  <span class="required">*</span></label>
+						  <textarea name="message" id="message" class="inputtextarea" rows="8" cols="30"></textarea>
+						</div>
+						
+					</div>
+			
+				</div>
+			
+				<div class="finalBlock_modal">
+			
+					<div class="botcheck">
+					<input type="checkbox" name="botcheck" class="inputtext inputBot">
+					<p>I hereby declare that the above-mentioned information is correct up to my knowledge and 
+					I bear the responsibility for the correctness of the above-mentioned particulars.</p>	
+					</div>
+															
+					<div class="button">
+					  <input id="submitform" class="submitform" type="submit" name="submitform" value="Send" />
+					</div>
+			
+				</div>
+					
+			</form>	
+			
+		</div>
+			
+		<script>
+		$(function() {
+			$( "#contact_wrap_modal" ).validate({
+			
+				errorClass: "my-error-class",
+				validClass: "my-valid-class",
+				
+				rules: {
+					firstname: {
+						required: true
+					},
+					lastname: {
+						required: true
+					},
+					phone: {
+						required: true,
+						phoneUK: true
+					},
+					email: {
+						required: true,
+						email: true
+					},
+					subject: {
+						required: true
+					},
+					enquiry: {
+						required: true
+					},
+					botcheck: {
+						required: true
+					}
+
+				},
+				messages: {
+					firstname: {
+						required: "Please enter your First Name."                         
+					},
+					lastname: {
+						required: "Please enter your Last Name."                         
+					},
+					phone: {
+						required: "Please enter your Phone Number."                         
+					},
+					subject: {
+						required: "Please enter Subject."                         
+					},
+					email: {
+						required: "Please enter your email address."                         
+					},
+					enquiry: {
+						required: "Please enter your Enquiry."                         
+					},
+					botcheck: {
+						required: "Please check this before you proceed."
+					}
+				},
+			});
+
+		});
+		</script>
+					
+		<script type="text/javascript">
+		$("#name").bind('blur keyup', function(){
+			$("#message").val("Name : " + $("#firstname").val() + " " + $("#lastname").val()
+								+ "\nEmail		: " + $("#email").val() 
+								+ "\nContact	: " + $("#contact").val()
+								+ "\nSection	: " + $("#area").val()
+								+ "\n\nSubject	: " + $("#subject").val()
+								+ "\n\nEnquiry	: " + $("#user_message").val());
+		});
+		 
+		$("#email").bind('blur keyup', function(){       
+			$("#message").val("Name : " + $("#firstname").val() + " " + $("#lastname").val()
+								+ "\nEmail		: " + $("#email").val() 
+								+ "\nContact	: " + $("#contact").val()
+								+ "\nSection	: " + $("#area").val()
+								+ "\n\nSubject	: " + $("#subject").val()
+								+ "\n\nEnquiry	: " + $("#user_message").val());
+		});
+
+		$("#contact").bind('blur keyup', function(){     
+			$("#message").val("Name : " + $("#firstname").val() + " " + $("#lastname").val() 
+								+ "\nEmail		: " + $("#email").val() 
+								+ "\nContact	: " + $("#contact").val()
+								+ "\nSection	: " + $("#area").val()
+								+ "\n\nSubject	: " + $("#subject").val()
+								+ "\n\nEnquiry 	: " + $("#user_message").val());
+		});
+
+		$("#subject").bind('blur keyup', function(){     
+			$("#message").val("Name : " + $("#firstname").val() + " " + $("#lastname").val() 
+								+ "\nEmail		: " + $("#email").val() 
+								+ "\nContact	: " + $("#contact").val()
+								+ "\nSection	: " + $("#area").val()
+								+ "\n\nSubject	: " + $("#subject").val()
+								+ "\n\nEnquiry 	: " + $("#user_message").val());
+		});
+
+		$("#user_message").bind('blur keyup', function(){     
+			$("#message").val("Name		: " + $("#firstname").val() + " " + $("#lastname").val()
+								+ "\nEmail		: " + $("#email").val() 
+								+ "\nContact	: " + $("#contact").val()
+								+ "\nSection	: " + $("#area").val()
+								+ "\n\nSubject	: " + $("#subject").val()
+								+ "\n\nEnquiry 	: " + $("#user_message").val());
+		});	
+		</script>
+					
+		<script>
+		$( "#submitform" ).click(function() {
+				if ($('#contact_wrap_modal').valid()) $( "#loadingDiv" ).removeClass( "hiddenClass" ).addClass( "showClass" );
+		});
+		</script>
+
+{% endblock %}

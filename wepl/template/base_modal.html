@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">		
+		<title>{% block title %}{% endblock %}</title>		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+        <meta name="author" content="Gaurav Singh | 4d.gaurav@gmail.com" />
+		<meta name="robots" content="index, follow" />		
+		<link rel="shortcut icon" href="{% static 'images/Logo_icon.png' %}"> 		
+		<link rel="stylesheet" type="text/css" href="{% static 'css/main.min.css' %}" />		
+		<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>		
+		<script type="text/javascript" src="{% static 'js/jquery.validate.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/additional-methods.min.js' %}"></script>		
+    </head>	
+    <body>	
+        <div class="container landing_page">		
+			{% block content %}{% endblock %}				
+        </div>
+	</body>	
+</html>

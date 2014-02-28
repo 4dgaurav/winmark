@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}WEPL | Projects{% endblock %}
+
+{% block meta %}
+        <meta name="description" content="PMC and Interior Design projects by Winmark Enterprises Private Limited" />
+        <meta name="keywords" content="PMC, interior design, projects" />		
+{% endblock %}
+
+{% block content %}
+		<div class="thankyou_bg">
+			<div class="fade_bg">
+				<div class="thankyou">
+
+				<script type="text/javascript" src="{% static 'js/corpo.min.js' %}"></script>
+
+					<h3>Coming Soon...</h3>
+					<br/>
+					<br/>
+					<p style="display: inline;">You can Email us for further </p>
+					 
+					<a href="javascript:void(0)" class="dialogify "><strong>&nbsp Enquiry </strong></a>
+					  
+					<div id="dialogify"><iframe frameborder="0" scrolling="yes" width="100%" height="100%" src="/modalpmc/"></iframe></div>
+					  					  
+					<script>
+						$("#dialogify").dialog({
+							autoOpen: false,
+							modal: true,
+						});
+						
+						$(".dialogify").on("click", function (e) {
+							e.preventDefault();
+							$("#dialogify").load(this.href + " #content", function () {
+								$(this).dialog("option", {
+									title: "Ask Us",
+									width: $(window).width() - 100,
+									height: $(window).height() - 100,
+									position: {
+										my: "center",
+										at: "center",
+										of: window
+									}
+								}).dialog("open");
+							});
+						});
+					</script>		
+					  
+				</div>
+			</div>
+		</div>
+
+{% endblock %} 
